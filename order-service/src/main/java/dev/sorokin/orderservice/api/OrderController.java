@@ -7,8 +7,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import dev.sorokin.orderservice.domain.OrderEntityMapper;
+import dev.sorokin.api.http.order.CreateOrderRequestDto;
+import dev.sorokin.api.http.order.OrderDto;
 import dev.sorokin.orderservice.domain.OrderProcessor;
+import dev.sorokin.orderservice.domain.db.OrderEntity;
+import dev.sorokin.orderservice.domain.db.OrderEntityMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -27,7 +30,7 @@ public class OrderController {
         @RequestBody CreateOrderRequestDto request
     ) {
         log.info("Creating order: request={}", request);
-        var saved = orderProcessor.create(request);
+        OrderEntity saved = orderProcessor.create(request);
         return orderEntityMapper.toOrderDto(saved); 
     }
 
@@ -39,4 +42,14 @@ public class OrderController {
         return orderEntityMapper.toOrderDto(found); 
     }
 
+
+    @PostMapping("/{id}/pay")
+    public OrderDto payOrder(
+        @PathVariable Long id,
+        @RequestBody OrderPaymentRequest request
+    ) {
+        log.info("Paying order with id={}, request={}", id, request);
+        OrderEntity entity = orderProcessor.processPayment(id, request);
+        return orderEntityMapper.toOrderDto(entity); 
+    }
 }

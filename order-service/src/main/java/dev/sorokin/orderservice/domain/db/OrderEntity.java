@@ -1,9 +1,10 @@
-package dev.sorokin.orderservice.domain;
+package dev.sorokin.orderservice.domain.db;
 
 import java.math.BigDecimal;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+import dev.sorokin.api.http.order.OrderStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

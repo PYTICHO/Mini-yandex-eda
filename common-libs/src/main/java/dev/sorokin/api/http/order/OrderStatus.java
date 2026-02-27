@@ -1,4 +1,4 @@
-package dev.sorokin.orderservice.domain;
+package dev.sorokin.api.http.order;
 
 public enum OrderStatus {
     PENDING_PAYMENT,

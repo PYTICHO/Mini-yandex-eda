@@ -1,9 +1,9 @@
-package dev.sorokin.orderservice.domain;
+package dev.sorokin.orderservice.domain.db;
 
 import org.mapstruct.*;
 
-import dev.sorokin.orderservice.api.CreateOrderRequestDto;
-import dev.sorokin.orderservice.api.OrderDto;
+import dev.sorokin.api.http.order.CreateOrderRequestDto;
+import dev.sorokin.api.http.order.OrderDto;
 
 
 @Mapper(

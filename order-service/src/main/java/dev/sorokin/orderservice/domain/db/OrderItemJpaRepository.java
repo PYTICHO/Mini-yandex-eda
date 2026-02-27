@@ -1,4 +1,4 @@
-package dev.sorokin.orderservice.domain;
+package dev.sorokin.orderservice.domain.db;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

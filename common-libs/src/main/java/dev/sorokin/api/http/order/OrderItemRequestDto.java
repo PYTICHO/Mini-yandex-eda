@@ -1,4 +1,4 @@
-package dev.sorokin.orderservice.api;
+package dev.sorokin.api.http.order;
 
 public record OrderItemRequestDto(
     Long itemId,

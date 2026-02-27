@@ -1,9 +1,8 @@
-package dev.sorokin.orderservice.api;
+package dev.sorokin.api.http.order;
 
 import java.math.BigDecimal;
 import java.util.Set;
 
-import dev.sorokin.orderservice.domain.OrderStatus;
 
 public record OrderDto(
     Long id,
