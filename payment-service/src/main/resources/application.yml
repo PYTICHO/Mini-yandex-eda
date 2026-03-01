@@ -6,10 +6,9 @@ spring:
     password: postgres
     username: postgres
     url: jdbc:postgresql://localhost/orders
-  
+
   jpa:
     hibernate:
       ddl-auto: update
-
 server:
   port: 8081

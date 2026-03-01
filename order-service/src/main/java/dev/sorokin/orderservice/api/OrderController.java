@@ -38,7 +38,7 @@ public class OrderController {
     @GetMapping("/{id}")
     public OrderDto getOne(@PathVariable Long id) {
         log.info("Retrieving order with id {}", id);
-        var found = orderProcessor.getOrderOrThrow(id);
+        OrderEntity found = orderProcessor.getOrderOrThrow(id);
         return orderEntityMapper.toOrderDto(found); 
     }
 
@@ -49,6 +49,7 @@ public class OrderController {
         @RequestBody OrderPaymentRequest request
     ) {
         log.info("Paying order with id={}, request={}", id, request);
+        
         OrderEntity entity = orderProcessor.processPayment(id, request);
         return orderEntityMapper.toOrderDto(entity); 
     }

@@ -17,7 +17,7 @@ dependencies {
 
 	implementation("org.springframework.boot:spring-boot-starter-web")
 
-//	implementation("org.springframework.kafka:spring-kafka")
+	implementation("org.springframework.kafka:spring-kafka")
 
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	runtimeOnly("org.postgresql:postgresql")
@@ -29,6 +29,8 @@ dependencies {
 	annotationProcessor("org.projectlombok:lombok")
 	testCompileOnly("org.projectlombok:lombok")
 	testAnnotationProcessor("org.projectlombok:lombok")
+
+	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 
 	// additional libs
 	implementation("org.mapstruct:mapstruct:1.6.3")
